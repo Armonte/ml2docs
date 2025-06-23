@@ -4,25 +4,25 @@
 
 This is the definitive technical reference for the Moon Lights 2 editing system. It consolidates all technical knowledge, establishes consistent naming conventions, and provides the architectural foundation for the Clay UI editor implementation.
 
-## ??? **Core System Architecture**
+## ?? **Core System Architecture**
 
 ### System Hierarchy
 ```
 ML2 Game Engine
-??? Character System (14 characters, file management)
-??? Visual Systems
-?   ??? Sprite System (.SP files - 4-bit indexed graphics)
-?   ??? Palette System (.PAL files - RGB555 color data)
-?   ??? Frame System (.FRM files - sprite composition patterns)
-??? Animation & Combat System
-?   ??? VSE System (.VSE files - dual pattern/movement data)
-?   ??? Hitbox System (collision detection)
-?   ??? Entity System (projectiles, effects)
-??? Player System (real-time game state)
-??? Memory Management (direct game memory access)
+„¥„Ÿ„Ÿ Character System (14 characters, file management)
+„¥„Ÿ„Ÿ Visual Systems
+„    „¥„Ÿ„Ÿ Sprite System (.SP files - 4-bit indexed graphics)
+„    „¥„Ÿ„Ÿ Palette System (.PAL files - RGB555 color data)
+„    „¤„Ÿ„Ÿ Frame System (.FRM files - sprite composition patterns)
+„¥„Ÿ„Ÿ Animation & Combat System
+„    „¥„Ÿ„Ÿ VSE System (.VSE files - dual pattern/movement data)
+„    „¥„Ÿ„Ÿ Hitbox System (collision detection)
+„    „¤„Ÿ„Ÿ Entity System (projectiles, effects)
+„¥„Ÿ„Ÿ Player System (real-time game state)
+„¤„Ÿ„Ÿ Memory Management (direct game memory access)
 ```
 
-## ?? **Naming Convention Standards**
+## ? **Naming Convention Standards**
 
 ### File & System Prefixes
 ```c
@@ -61,7 +61,7 @@ isEntityActive, hasValidSprite, canSpawnProjectile
 numActiveEntities, spritePageIndex, currentFrameIndex
 ```
 
-## ?? **VSE System - Complete Architecture with Proper Naming**
+## ? **VSE System - Complete Architecture with Proper Naming**
 
 ### VSE Table Entry Structure (FIXED NAMING)
 ```c
@@ -220,7 +220,7 @@ bool VSE_BuildAnimationTimeline(
 );
 ```
 
-## ?? **Player System - Enhanced Structure**
+## ? **Player System - Enhanced Structure**
 
 ### Player State Structure (284 bytes)
 ```c
@@ -382,7 +382,7 @@ void Player_ApplyVSEMovement(Player_State* player, const VSE_MovementResult* mov
 }
 ```
 
-## ?? **Entity System - Professional Architecture**
+## ? **Entity System - Professional Architecture**
 
 ### Entity Slot Structure (284 bytes)
 ```c
@@ -503,7 +503,7 @@ void Entity_SpawnFromVSEPattern(Player_State* owner, const VSE_PatternFrame* pat
 void Entity_DestroySlot(int playerIndex, Entity_SlotIndex slotIndex);
 ```
 
-## ?? **Collision Box System - Unified Architecture**
+## ? **Collision Box System - Unified Architecture**
 
 ### Box Type Classification
 ```c
@@ -557,7 +557,7 @@ typedef struct Collision_Box {
 } Collision_Box;
 ```
 
-## ?? **Timeline System - Professional Architecture**
+## ? **Timeline System - Professional Architecture**
 
 ### Timeline Core Structures
 ```c
@@ -631,7 +631,7 @@ typedef struct Timeline_State {
 } Timeline_State;
 ```
 
-## ?? **State Machine System - Professional Architecture**
+## ? **State Machine System - Professional Architecture**
 
 ### Character State Management
 ```c
@@ -711,7 +711,7 @@ typedef struct State_Transition {
 } State_Transition;
 ```
 
-## ?? **Clay UI Integration - Proper Architecture**
+## ? **Clay UI Integration - Proper Architecture**
 
 ### Custom Element Types (IMPROVED NAMING)
 ```c
@@ -781,7 +781,7 @@ typedef struct Clay_ML2_ElementData {
 } Clay_ML2_ElementData;
 ```
 
-## ?? **File System - Organized Architecture**
+## ? **File System - Organized Architecture**
 
 ### File Naming & Organization
 ```c
@@ -812,7 +812,7 @@ typedef struct ML2_FileSystem {
 #define ML2_PROJECT_SUBDIR   "PROJECTS"
 ```
 
-## ?? **Memory Management - Game Integration**
+## ? **Memory Management - Game Integration**
 
 ### Memory Address Mapping
 ```c
@@ -846,7 +846,7 @@ typedef struct ML2_FileSystem {
     ((Entity_Slot*)((player == 0 ? ENT_PLAYER1_BASE_ADDRESS : ENT_PLAYER2_BASE_ADDRESS) + (slot * ENT_SLOT_SIZE)))
 ```
 
-## ?? **Function Naming Conventions**
+## ? **Function Naming Conventions**
 
 ### Standard Function Patterns
 ```c
@@ -897,7 +897,7 @@ bool Collision_TestBoxOverlap(const Collision_Box* box1, const Collision_Box* bo
 void Collision_RenderBoxes(const Collision_Box* boxes, size_t numBoxes, float scaleFactor);
 ```
 
-## ?? **Configuration & Constants**
+## ? **Configuration & Constants**
 
 ### System Limits
 ```c
@@ -927,7 +927,7 @@ void Collision_RenderBoxes(const Collision_Box* boxes, size_t numBoxes, float sc
 #define CHARACTER_PREFIX_LENGTH     2       // File prefix length
 ```
 
-## ?? **Conclusion**
+## ? **Conclusion**
 
 This master document establishes:
 
@@ -947,15 +947,15 @@ This master document establishes:
 - **Memory Layout Precision**: Exact game memory compatibility maintained
 - **Performance Considerations**: Optimized data structures and access patterns
 
-This serves as the definitive reference for building the Clay UI editor with professional-grade architecture and maintainable code! ??
+This serves as the definitive reference for building the Clay UI editor with professional-grade architecture and maintainable code! ?
 
 ---
 
-## ?? **MISSING CRITICAL SECTIONS** 
+## ? **MISSING CRITICAL SECTIONS** 
 
 *The following sections need to be added to make this a complete professional development guide:*
 
-## ?? **Project Management System**
+## ? **Project Management System**
 
 ### Project File Format
 ```c
@@ -1105,7 +1105,7 @@ void UndoRedo_EndBatchOperation(UndoRedo_System* system);
 void UndoRedo_Clear(UndoRedo_System* system);
 ```
 
-## ?? **Build System & Development Workflow**
+## ? **Build System & Development Workflow**
 
 ### CMake Build Configuration
 ```cmake
@@ -1393,7 +1393,7 @@ extern MemoryPool g_timelineFramePool; // For timeline frame allocations
 extern MemoryPool g_entityPool;        // For entity allocations
 ```
 
-## ?? **Copy/Paste & Batch Operations**
+## ? **Copy/Paste & Batch Operations**
 
 ### Clipboard System
 ```c
@@ -1438,7 +1438,7 @@ bool BatchOp_ScaleTimeline(Timeline_State* timeline, float scaleFactor);
 bool BatchOp_ShiftFrames(Timeline_State* timeline, float timeOffset, float startTime, float endTime);
 ```
 
-## ?? **Search & Filter System**
+## ? **Search & Filter System**
 
 ### Search Interface
 ```c
@@ -1491,7 +1491,7 @@ bool Search_FindPrevious(const SearchQuery* query, SearchResult* result);
 bool Search_ReplaceAll(const SearchQuery* query, const void* replacementData);
 ```
 
-## ?? **Plugin & Extension System**
+## ? **Plugin & Extension System**
 
 ### Plugin Architecture
 ```c
@@ -1525,7 +1525,7 @@ void PluginManager_NotifyFrameUpdate(PluginManager* manager, float deltaTime);
 void PluginManager_NotifyVSEFrameModified(PluginManager* manager, uint16_t entry, uint16_t frame);
 ```
 
-## ?? **Localization & Accessibility**
+## ? **Localization & Accessibility**
 
 ### Internationalization System
 ```c
@@ -1569,7 +1569,7 @@ bool Accessibility_IsKeyboardNavigationActive(void);
 void Accessibility_AnnounceToScreenReader(const char* message);
 ```
 
-## ?? **Help System & Documentation**
+## ? **Help System & Documentation**
 
 ### In-Editor Help System
 ```c
@@ -1595,7 +1595,7 @@ void HelpSystem_ShowContextHelp(HelpSystem* help, const char* context);
 bool HelpSystem_Search(const HelpSystem* help, const char* query, HelpTopic** results, size_t maxResults);
 ```
 
-## ?? **Testing & Quality Assurance**
+## ? **Testing & Quality Assurance**
 
 ### Unit Test Framework
 ```c
@@ -1702,24 +1702,24 @@ ML2_TEST(Integration_CompleteEditingWorkflow) {
 
 ---
 
-## ?? **Summary of Added Critical Sections**
+## ? **Summary of Added Critical Sections**
 
 The master document now includes:
 
 ### **? Added Professional Systems:**
-- **?? Project Management**: Complete project file format, auto-save, recent files
+- **? Project Management**: Complete project file format, auto-save, recent files
 - **?? Undo/Redo System**: Command pattern with batch operations and grouping
-- **?? Build System**: CMake configuration, development scripts, CI/CD ready
+- **? Build System**: CMake configuration, development scripts, CI/CD ready
 - **? Error Handling**: Comprehensive error codes, validation, recovery
 - **? Performance**: Profiling system, memory pools, optimization strategies
-- **?? Batch Operations**: Copy/paste, multi-selection, bulk edits
-- **?? Search & Filter**: Powerful search across all data types
-- **?? Plugin System**: Extensible architecture for custom tools
-- **?? Accessibility**: Localization, screen reader support, keyboard navigation
-- **?? Help System**: In-editor help, context-sensitive documentation
-- **?? Testing Framework**: Unit tests, integration tests, quality assurance
+- **? Batch Operations**: Copy/paste, multi-selection, bulk edits
+- **? Search & Filter**: Powerful search across all data types
+- **? Plugin System**: Extensible architecture for custom tools
+- **? Accessibility**: Localization, screen reader support, keyboard navigation
+- **? Help System**: In-editor help, context-sensitive documentation
+- **? Testing Framework**: Unit tests, integration tests, quality assurance
 
-### **?? Now Complete For Production**
+### **? Now Complete For Production**
 This is now a **complete professional development specification** that covers:
 - **Technical Implementation** (file formats, memory layout, algorithms)
 - **Software Architecture** (modular design, professional patterns)
@@ -1727,4 +1727,4 @@ This is now a **complete professional development specification** that covers:
 - **User Experience** (accessibility, help, internationalization)
 - **Maintainability** (error handling, validation, extensibility)
 
-Ready for building a **world-class fighting game animation editor**! ???
+Ready for building a **world-class fighting game animation editor**! ??
