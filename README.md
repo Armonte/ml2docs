@@ -9,17 +9,17 @@ This is the definitive technical reference for the Moon Lights 2 editing system.
 ### System Hierarchy
 ```
 ML2 Game Engine
-„¥„Ÿ„Ÿ Character System (14 characters, file management)
-„¥„Ÿ„Ÿ Visual Systems
-„    „¥„Ÿ„Ÿ Sprite System (.SP files - 4-bit indexed graphics)
-„    „¥„Ÿ„Ÿ Palette System (.PAL files - RGB555 color data)
-„    „¤„Ÿ„Ÿ Frame System (.FRM files - sprite composition patterns)
-„¥„Ÿ„Ÿ Animation & Combat System
-„    „¥„Ÿ„Ÿ VSE System (.VSE files - dual pattern/movement data)
-„    „¥„Ÿ„Ÿ Hitbox System (collision detection)
-„    „¤„Ÿ„Ÿ Entity System (projectiles, effects)
-„¥„Ÿ„Ÿ Player System (real-time game state)
-„¤„Ÿ„Ÿ Memory Management (direct game memory access)
+├── Character System (14 characters, file management)
+├── Visual Systems
+│   ├── Sprite System (.SP files - 4-bit indexed graphics)
+│   ├── Palette System (.PAL files - RGB555 color data)
+│   └── Frame System (.FRM files - sprite composition patterns)
+├── Animation & Combat System
+│   ├── VSE System (.VSE files - dual pattern/movement data)
+│   ├── Hitbox System (collision detection)
+│   └── Entity System (projectiles, effects)
+├── Player System (real-time game state)
+└── Memory Management (direct game memory access)
 ```
 
 ## ? **Naming Convention Standards**
